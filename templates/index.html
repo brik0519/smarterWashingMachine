@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LED 상태 제어</title>
+    <script>
+        // 주기적으로 상태를 확인하는 함수
+        function checkStatus() {
+            fetch('/status')  // Flask의 /status 라우트로 GET 요청
+                .then(response => response.json())
+                .then(data => {
+                    const currentStatus = document.getElementById('led-status').innerText.trim();
+                    if (data.status !== currentStatus) {
+                        location.reload();  // 상태가 변경되면 페이지 새로고침
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        // 상태를 확인
+        setInterval(checkStatus, 100);
+    </script>
 </head>
 <body>
     <h1>LED 상태 제어</h1>
-    
+
     <!-- 현재 LED 상태 표시 -->
     <p>현재 상태: 
-        <strong style="color: {{ 'green' if status == 'ON' else 'red' }}">
+        <strong id="led-status" style="color: {{ 'green' if status == 'ON' else 'red' }}">
             {{ status }}
         </strong>
     </p>
