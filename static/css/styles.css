@@ -1,23 +1,74 @@
-/* 전체 화면 중앙 정렬 */
+/* 공통 설정 */
 body {
-    display: flex; /* Flexbox 사용 */
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    
-    height: 100vh; /* 화면 전체 높이 */
-    margin: 0; /* 여백 제거 */
-    background-color: #f0f0f0; /* 배경색 */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* 화면 전체를 채우도록 설정 */
 }
 
-/* 이미지 스타일 */
-img {
-    float: right;
-    margin: 10px;
-    width: 45%;
-    height: auto;
-    max-width: 100%; /* 반응형 크기 조정 */
-    height: auto; /* 이미지 비율 유지 */
+html, body {
+    height: 100%;
+}
 
-    position: absolute;  
-    transform: translate(-50%, -50%);
+/* 왼쪽 섹션 */
+#left-container {
+    flex: 1; /* 가변 크기 설정 */
+    padding: 20px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#left-container h1 {
+    color: #2c3e50;
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+#left-container h2 {
+    color: #2c3e50;
+    margin: 20px 0;
+    font-size: 1.5em;
+}
+
+#left-container #led-status {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#left-container #led-status.green {
+    color: green;
+}
+
+#left-container #led-status.red {
+    color: red;
+}
+
+#left-container #led-status.gray {
+    color: gray;
+}
+
+#left-container #timer {
+    font-size: 2em;
+    color: #34495e;
+    margin: 20px 0;
+}
+
+/* 오른쪽 섹션 */
+#right-container {
+    flex: 1; /* 가변 크기 설정 */
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#right-container img {
+    max-width: 100%; /* 이미지를 섹션 크기에 맞게 조정 */
+    max-height: 100%; /* 이미지를 섹션 크기에 맞게 조정 */
 }
