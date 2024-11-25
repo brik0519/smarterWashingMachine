@@ -1,0 +1,23 @@
+/* 전체 화면 중앙 정렬 */
+body {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    
+    height: 100vh; /* 화면 전체 높이 */
+    margin: 0; /* 여백 제거 */
+    background-color: #f0f0f0; /* 배경색 */
+}
+
+/* 이미지 스타일 */
+img {
+    float: right;
+    margin: 10px;
+    width: 45%;
+    height: auto;
+    max-width: 100%; /* 반응형 크기 조정 */
+    height: auto; /* 이미지 비율 유지 */
+
+    position: absolute;  
+    transform: translate(-50%, -50%);
+}

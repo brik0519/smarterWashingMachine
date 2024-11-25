@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+
     <title>LED 상태 제어</title>
     <script>
         // 주기적으로 상태를 확인하는 함수
@@ -22,14 +24,25 @@
     </script>
 </head>
 <body>
-    <h1>LED 상태 제어</h1>
+    <div>
+        <h1>Smarter Washing Machine</h1>
+    </div>
 
-    <!-- 현재 LED 상태 표시 -->
-    <p>현재 상태: 
-        <strong id="led-status" style="color: {{ 'green' if status == 'ON' else 'red' }}">
-            {{ status }}
-        </strong>
-    </p>
+    <h2>세탁기 상태    </h2>
+
+    <div>
+        <p>현재 상태: 
+            <strong id="led-status" style="color: {{ 'green' if status == 'ON' else 'red' }}">
+                {{ status }}
+            </strong>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            <img src="/static/images/pngegg.png" alt="Centered Image">
+        </p>
+    </div>
 
 </body>
 </html>
